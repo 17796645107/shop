@@ -106,7 +106,8 @@ table{
 		border: 1px solid #e5e5e5;
 	}
 table tr td{
-	overflow：hidden;
+	/*overflow：hidden;*/
+	overflow: hidden;
 	font-size: 12px;
 	padding: 10px;
 	border: 1px solid #e5e5e5;
