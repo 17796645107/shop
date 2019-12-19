@@ -1,0 +1,39 @@
+.header1{
+	color: #999;
+	margin: 10px;
+}
+.header1_2{
+	float: right;
+}
+.register_a{
+	color: red;
+}
+
+.header2{
+	padding: 10px;
+	margin-top: 10px;
+    background: #262626;
+    border-bottom: solid red;
+}
+.header2 img{
+	width: 40px;
+}
+.header2 hr{
+	color: red;
+}
+.header2_2{
+	display: inline;
+	margin-left:60%;
+}
+.header2_2 input[type=button]{
+    height: 30px;
+    border: 1px solid ;
+    background: #DFDFDF;
+    margin-left: -5px;
+}
+.header2_2 input[type=text]{
+	vertical-align:middle;
+    height: 28px;
+    border: 1px solid ;
+    background: #DFDFDF;
+}
