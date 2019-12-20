@@ -3,17 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>用户注册</title>
+    <link rel="stylesheet" href="../css/signIn.css" type="text/css" >
 </head>
 <body>
-    <form>
-        手机号:<input type="text" name="telephone" onchange="checkPhone(this)"><br>
-        密码:<input type="password" name="password"><br>
-        确认密码:<input type="password" name="rePassword"><br>
-        <input type="text" value="" placeholder="请输入验证码">
-        <input type="text" value="" placeholder="请输入验证码（区分大小写）">
-        <img src="../img/1.PNG"><br>
-        <input type="submit" value="注册">
+<div class="register">
+    <form id="ajaxForm">
+        <ul>
+            <li>
+                <label>用户名</label>
+                <input type="text" name="name" class="name">
+            </li>
+            <li>
+                <label>请设置密码</label>
+                <input type="password" name="pass" class="pass">
+            </li>
+            <li>
+                <label>请确认密码</label>
+                <input type="password" name="repass" class="repass">
+            </li>
+            <li>
+                <label>验证手机</label>
+                <input type="text" name="mobile" class="mobile">
+            </li>
+            <li>
+                <label>图片验证码</label>
+                <input type="text" name="code" class="code">
+                <img src="../img/1.PNG" class="verify">
+            </li>
+            <li>
+                <label></label>
+                <input type="button" class="submit" value="立即注册">
+            </li>
+        </ul>
     </form>
+</div>
+<!-- 提示信息 -->
+<div class="tips">
+    <p>用户名不能为空</p>
+</div>
 </body>
 <script type="text/javascript" src="../js/signIn.js">
 </script>
