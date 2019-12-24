@@ -645,13 +645,37 @@ a {
 	color: white;
 }
 
+/* 商品信息 */
 .product_imgs {
 	margin: 20px;
 	height: 500px;
 	width: 100%;
 	background-color: #F2F2F2;
+	border-radius: 15px;
 }
 
+/* 评论 */
+#product_comment{
+	margin: 20px;
+	height: 720px;
+	width: 100%;
+	background-color: #F2F2F2;
+	border-radius: 15px;
+}
+
+
+.kong .page{
+	height: 40px;
+	width: 100%;
+}
+
+.kong .page .count{
+	position: relative;
+	right: -900px;
+	top: -32px;
+	font-size: 14px;
+	color: #555555;
+}
 
 /* list页面 */
 .kong .page ul{
@@ -704,4 +728,125 @@ a {
 	}
 	#pro_cate .pro_search .cond_details ul li a:hover{
 		color: #008000;
+	}
+	
+	/* 商品评论 */
+	/* 单个用户评论 */
+	#product_comment .user_comment{
+		height: 100px;
+		width: 1000px;
+		margin: 0 auto;
+		margin-top: 30px;
+		background-color: white;
+		border-radius: 18px;
+	}
+	
+	/* 用户区域 */
+	#product_comment .user_comment .user_msg{
+		height: 100px;
+		width: 120px;
+		float: left;
+	}
+	
+	/* 头像 */
+	#product_comment .user_comment .user_msg .user_img{
+		height: 70px;
+		width: 70px;
+		border: 2px silver solid;
+		margin: 0 auto;
+		border-radius: 100px;
+		margin-top: 6px;
+	}
+	/* 头像图片 */
+	#product_comment .user_comment .user_msg .user_img img{
+		height: 70px;
+		width: 70px;
+		margin: 0 auto;
+		border-radius: 100px;
+	}
+	
+	/* 用户名 */
+	#product_comment .user_comment .user_msg .user_name{
+		text-align: center;
+		color: #008000;
+		font-size: 12px;
+	}
+	
+	#product_comment .user_comment .comment{
+		height: 80px;
+		width: 850px;
+		float:left;
+		margin-top: 5px;
+	}
+	
+	#product_comment .user_comment .comment .comment_text{
+		height: 70px;
+		width: 500px;
+		line-height: 80px;
+		font-size: 14px;
+		margin-left: 20px;
+	}
+	
+	#product_comment .user_comment .comment .comment_data{
+		height: 20px;
+		float: right;
+		color: #737373;
+	}
+	
+	#product_comment .user_comment .comment .comment_pro{
+		margin-left: 20px;
+		font-size: 12px;
+		color: #737373;
+	}
+	
+	/* 自写分页 */
+	.yahoo{
+		margin: 3px;
+		text-align: center;
+		padding-left: 9px;
+		padding-right: 9px;
+	}
+	
+	.yahoo a{
+		color: #737373;
+		margin-left: 16px;
+		text-align: center;
+		text-decoration: underline;
+		font-size: 14px;
+		padding: 0px 6px 0px 6px;
+	}
+	
+	/* 悬浮事件 */
+	.yahoo a:hover{
+		color: #008000;
+	}
+	
+	/* 点击事件 */
+	.yahoo a:active{
+		border-left: #008000 1px solid;
+		border-bottom: #008000 1px solid;
+		border-right: #008000 1px solid;
+		border-top: #008000 1px solid;
+		border-radius: 100px;
+		color: #008000;
+	}
+	
+	.yahoo span.current{
+		font-size: 18px;
+		font-weight: 600;
+		color: #737373;
+		padding: 0px 6px 0px 16px; 
+	}
+	
+	.yahoo span.disabled{
+		BORDER-RIGHT: #eee 1px solid;
+		PADDING-RIGHT: 5px;
+		BORDER-TOP: #eee 1px solid;
+		PADDING-LEFT: 5px;
+		PADDING-BOTTOM: 2px;
+		MARGIN: 2px;
+		BORDER-LEFT: #eee 1px solid;
+		COLOR: #ddd;
+		PADDING-TOP: 2px;
+		BORDER-BOTTOM: #eee 1px solid
 	}
