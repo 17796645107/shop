@@ -8,10 +8,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
-	<link rel="stylesheet" type="text/css" href="css/H-ui.min.css" />
-	<link rel="stylesheet" type="text/css" href="css/H-ui.admin.css" />
-	<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
-	<link rel="stylesheet" type="text/css" href="css/skin.css" id="skin" />
+	<link rel="stylesheet" type="text/css" href="css/static/h-ui/css/H-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/static/h-ui.admin/css/H-ui.admin.css" />
+	<link rel="stylesheet" type="text/css" href="css/lib/Hui-iconfont/1.0.8/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="css/static/h-ui.admin/skin/default/skin.css" id="skin" />
+	<link rel="stylesheet" type="text/css" href="css/static/h-ui.admin/css/style.css" />
 <!--[if IE 6]>
 <script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script><![endif]-->
@@ -46,23 +47,16 @@
 <aside class="Hui-aside">
 
 	<div class="menu_dropdown bk_2">
-		<dl id="menu-picture">
-			<dt><i class="Hui-iconfont">&#xe613;</i> 图片管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
-			<dd>
-				<ul>
-					<li><a href="login.html" title="图片管理">图片管理</a></li>
-				</ul>
-			</dd>
-		</dl>
 		<dl id="menu-product">
 			<dt><i class="Hui-iconfont">&#xe620;</i> 商品管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
 					<li><a href="Brand-list.html" title="品牌管理">品牌管理</a></li>
-					<li><a href="format-list.html" title="分类管理">规格管理</a></li>
-					<li><a href="commodity-list.html" title="管理">商品管理</a></li>
-					<li><a href="comment-list.html" title="管理">型号管理</a></li>
-					<li><a href="reserve-list.html" title="管理">库存管理</a></li>
+					<li><a href="format-list.html" title="规格管理">规格管理</a></li>
+					<li><a href="commodity-list.html" title="商品管理">商品管理</a></li>
+					<li><a href="model-list.html" title="型号管理">型号管理</a></li>
+					<li><a href="reserve-list.html" title="库存管理">库存管理</a></li>
+					<li><a href="activity-list.html" title="活动管理">活动管理</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -70,7 +64,7 @@
 			<dt><i class="Hui-iconfont">&#xe622;</i> 评论管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
 			<dd>
 				<ul>
-					<li><a href="http://h-ui.duoshuo.com/admin/" title="评论列表">评论列表</a></li>
+					<li><a href="comment-list.html" title="评论列表">评论列表</a></li>
 				</ul>
 			</dd>
 		</dl>
@@ -104,7 +98,7 @@
 				<input type="text" class="input-text" style="width:250px" placeholder="商品名称" id="" name="">
 				<button type="submit" class="btn btn-success radius" id="" name=""><i class="Hui-iconfont">&#xe665;</i> 搜商品</button>
 			</div>
-			<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a href="javascript:;" onclick="member_add('添加商品','member-add.html','','510')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加商品</a></span> <span class="r">共有数据：<strong>60</strong> 条</span> </div>
+			<div class="cl pd-5 bg-1 bk-gray mt-20"><a href="javascript:;" onclick="member_add('添加商品','reserve-add.html','','510')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加库存</a></span> <span class="r">共有数据：<strong>60</strong> 条</span> </div>
 			<div class="mt-20">
 				<table class="table table-border table-bordered table-hover table-bg table-sort">
 					<thead>
@@ -144,9 +138,9 @@
 <script type="text/javascript" src="js/H-ui.admin.page.js"></script>
 
 <!--请在下方写此页面业务相关的脚本-->
-<script type="text/javascript" src="lib/My97DatePicker/4.8/WdatePicker.js"></script>
-<script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="js/lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="js/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
 $(function(){
 	$('.table-sort').dataTable({
@@ -204,13 +198,6 @@ function member_edit(title,url,id,w,h){
 /*密码-修改*/
 function change_password(title,url,id,w,h){
 	layer_show(title,url,w,h);	
-}
-/*用户-删除*/
-function member_del(obj,id){
-	layer.confirm('确认要删除吗？',function(index){
-		$(obj).parents("tr").remove();
-		layer.msg('已删除!',{icon:1,time:1000});
-	});
 }
 </script>
 <!--/请在上方写此页面业务相关的脚本-->
