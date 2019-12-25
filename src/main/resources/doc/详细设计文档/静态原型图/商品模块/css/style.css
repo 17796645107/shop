@@ -136,7 +136,7 @@ body {
 	height: 240px;
 	width: 196px;
 	background-color: white;
-	margin-left: 12px;
+	margin-left: 11px;
 	float: left;
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -580,6 +580,25 @@ a {
 	background-color: #CCCCCC;
 }
 
+/* 收藏 */
+#product_details .product_msg .phone_text1 .collect {
+	height: 30px;
+	width: 190px;
+	font-size: 13px;
+	position: relative;
+	top: -20px;
+	left: 320px;
+	text-align: center;
+
+}
+#product_details .product_msg .phone_text1 .collect a{
+	text-decoration: underline;
+	color: #333333;
+}
+
+#product_details .product_msg .phone_text1 .collect a:hover{
+	color: #E64E3E;
+}
 /* 购买 */
 #product_details .product_msg .shopping {
 	height: 110px;
