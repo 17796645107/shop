@@ -2,7 +2,7 @@ package com.mbp.dao;
 
 import com.mbp.BaseTest;
 
-import entity.PersonInfo;
+import com.mbp.entity.PersonInfo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
