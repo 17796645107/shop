@@ -37,7 +37,7 @@
 		</sqlMapGenerator>
 
 		<!--生成Mapper接口存放位置 -->
-		<javaClientGenerator targetPackage="com.mbp.mapper"
+		<javaClientGenerator targetPackage="edu.hhu.mapper"
 			targetProject="src/main/java" type="XMLMAPPER" />
 
 		<table schema="hhudb" tableName="user" enableCountByExample="false"
