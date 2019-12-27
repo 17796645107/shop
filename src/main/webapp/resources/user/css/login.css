@@ -89,6 +89,7 @@
     position: absolute;
     z-index: 1;
     background: white;
+    display: none;
 }
 
 .usernameList ul li {

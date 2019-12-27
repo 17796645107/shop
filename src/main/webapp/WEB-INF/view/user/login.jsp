@@ -6,17 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" isELIgnored="false"%>
-<%
-    String path = request.getContextPath();
-    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
+
 <html>
 <head>
-    <base href="<%=basePath%>resources/">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>用户登录</title>
-    <link rel="stylesheet" href="user/css/login.css"/>
-    <link rel="stylesheet" href="common/common.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/user/css/login.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/common/common.css"/>
 </head>
 <body>
     <div class="UserLogin">
@@ -39,15 +35,15 @@
                         <div class="username">
                             <i class="el-icon-user"></i>
                             <input type="text" onclick="showUsernameList();"
-                                   onblur="hiddenUsernameList" placeholder="手机号"
+                                   onblur="hiddenUsernameList();" placeholder="手机号"
                                    required="required"/>
-                            <%--<div class="usernameList">
+                            <div class="usernameList">
                                 <ul>
                                     <li v-for="user in UsernameCookie" onmouseover="fillUsername(user)">
                                         {{user[0]}}
                                     </li>
                                 </ul>
-                            </div>--%>
+                            </div>
                         </div>
                         <div class="password">
                             <i class="el-icon-unlock"></i>
@@ -63,7 +59,7 @@
                                 <a href="">忘记密码</a>
                             </div>
                         </div>
-                        <input type="button" class="login_submit" value="loginText" onclick="userLogin"/>
+                        <input type="button" class="login_submit" value="登录" onclick="userLogin()"/>
                     </div>
                     <div class="other">
                         <div class="weChat">
@@ -71,11 +67,11 @@
                         </div>
                         <div class="other_list">
                             <ul>
-                                <li><a href="">新浪微博1</a></li>
+                                <li><a href="">新浪微博</a></li>
                                 <li><a href="">QQ</a></li>
                                 <li><a href="">支付宝</a></li>
                                 <li><a href="">更多</a></li>
-                                <li><a href="/user/register">免费注册</a></li>
+                                <li><a href="${pageContext.request.contextPath}/user/toRegister">免费注册</a></li>
                             </ul>
                         </div>
                     </div>
@@ -88,5 +84,5 @@
     </div>
 
 </body>
-<script src="user/js/login.js"></script>
+<script src="${pageContext.request.contextPath }/resources/user/js/login.js"></script>
 </html>
