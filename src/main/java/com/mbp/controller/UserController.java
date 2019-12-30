@@ -25,4 +25,9 @@ public class UserController {
     public String goUserIndex(){
         return "user/userIndex";
     }
+
+    @RequestMapping("/toUserAddress")
+    public String goUserAddress(){
+        return "user/userAddress";
+    }
 }
