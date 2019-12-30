@@ -132,11 +132,10 @@ body {
 }
 
 .hot {
-	border: 1px #E8E8E8 solid;
 	height: 240px;
 	width: 196px;
 	background-color: white;
-	margin-left: 11px;
+	margin-left: 13px;
 	float: left;
 	margin-top: 10px;
 	margin-bottom: 10px;
