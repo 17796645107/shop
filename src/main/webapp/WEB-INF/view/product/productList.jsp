@@ -1,0 +1,318 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: moon
+  Date: 2019/12/30
+  Time: 10:58
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" isELIgnored="false" %>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>手机大全</title>
+    <!-- 引入css -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/product/css/bootstrap.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/product/css/style.css"/>
+    <script src="${pageContext.request.contextPath }/resources/product/js/jquery.min.js"></script>
+</head>
+<body>
+
+<!-- 商城头部 -->
+<div id="head">
+
+    <!-- 导航栏 -->
+    <div class="header">
+
+        <!-- 左侧导航栏 -->
+        <div class="left_header">
+            <a href="index.html">首页</a>
+            <a href="product_list.html">更多商品</a>
+            <a href="#">用户中心</a>
+        </div>
+
+        <!-- 右侧导航栏 -->
+        <div class="right_header">
+            <a href="#">登录</a>
+            <a href="#">注册</a>
+            <a href="#">我的订单</a>
+        </div>
+    </div>
+
+    <!-- 商城 -->
+    <div class="gmall">
+        <div class="img" style="margin-top: 5px; margin-left: 0px;">
+            <a href="index.html">ZLJ.COM</a>
+        </div>
+
+        <!-- 搜索按钮 -->
+        <div class="container">
+            <form action="" class="parent">
+                <input type="text" class="search" placeholder="搜索">
+                <input type="button" name="" id="" class="btn" style="background-image: url(${pageContext.request.contextPath }/resources/product/img/log2.1.png);">
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<!-- 索引 -->
+<!-- 空 -->
+<div class="kong">
+    <div class="action">
+				<span>
+					<a href="index.html">首页</a>
+				</span>
+        >
+        <span>
+					<a href="product_list.html">手机</a>
+				</span>
+    </div>
+</div>
+
+<!-- 商品检索 -->
+<div id="pro_cate">
+
+    <!-- 商品检索条目 -->
+    <div class="pro_search">
+        <div class="pro_search_cond">
+            <span>分 类：</span>
+        </div>
+        <!-- 详细条件 -->
+        <div class="cond_details">
+            <ul>
+                <li>
+                    <a href="#">苹果</a>
+                </li>
+                <li>
+                    <a href="#">华为</a>
+                </li>
+                <li>
+                    <a href="#">小米</a>
+                </li>
+                <li>
+                    <a href="#">锤子</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="pro_search">
+        <div class="pro_search_cond">
+            <span>价格区间：</span>
+        </div>
+        <!-- 详细条件 -->
+        <div class="cond_details">
+            <ul>
+                <li>
+                    <a href="#">0~999</a>
+                </li>
+                <li>
+                    <a href="#">1000~1999</a>
+                </li>
+                <li>
+                    <a href="#">2000~3999</a>
+                </li>
+                <li>
+                    <a href="#">4000及以上</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="pro_search">
+        <div class="pro_search_cond">
+            <span>存储规格：</span>
+        </div>
+        <!-- 详细条件 -->
+        <div class="cond_details">
+            <ul>
+                <li>
+                    <a href="#">6+128G</a>
+                </li>
+                <li>
+                    <a href="#">8+256G</a>
+                </li>
+                <li>
+                    <a href="#">8+512G</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="pro_search">
+        <div class="pro_search_cond">
+            <span>上市时间：</span>
+        </div>
+        <!-- 详细条件 -->
+        <div class="cond_details">
+            <ul>
+                <li>
+                    <a href="#">3个月内</a>
+                </li>
+                <li>
+                    <a href="#">3至6个月</a>
+                </li>
+                <li>
+                    <a href="#">6月以上</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="pro_search">
+        <!-- 条件 -->
+        <div class="pro_search_cond">
+            <span>排序：</span>
+        </div>
+        <!-- 详细条件 -->
+        <div class="cond_details">
+            <ul>
+                <li>
+                    <a href="#">最新</a>
+                </li>
+                <li>
+                    <a href="#">热度</a>
+                </li>
+                <li>
+                    <a href="#">价格</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 全部商品 -->
+<div id="more">
+    <div class="hot">
+        <a href="product_details.html">
+            <img src="${pageContext.request.contextPath }/resources/product/img/phone/小米cc9_2.jpg" >
+        </a>
+        <div>
+					<span style="color: #008000;">
+						小米CC9
+					</span>
+            <br />
+            <span style="color: #FF0000;">
+						$400.00
+					</span>
+        </div>
+    </div>
+    <div class="hot">
+        <a href="product_details.html">
+            <img src="img/phone/小米cc9_2.jpg" >
+        </a>
+        <div>
+					<span style="color: #008000;">
+						小米CC9
+					</span>
+            <br />
+            <span style="color: #FF0000;">
+						$400.00
+					</span>
+        </div>
+    </div>
+    <div class="hot">
+        <a href="product_details.html">
+            <img src="img/phone/小米cc9_2.jpg" >
+        </a>
+        <div>
+					<span style="color: #008000;">
+						小米CC9
+					</span>
+            <br />
+            <span style="color: #FF0000;">
+						$400.00
+					</span>
+        </div>
+    </div>
+    <div class="hot">
+        <a href="product_details.html">
+            <img src="img/phone/小米cc9_2.jpg" >
+        </a>
+        <div>
+					<span style="color: #008000;">
+						小米CC9
+					</span>
+            <br />
+            <span style="color: #FF0000;">
+						$400.00
+					</span>
+        </div>
+    </div>
+    <div class="hot">
+        <a href="product_details.html">
+            <img src="img/phone/小米cc9_2.jpg" >
+        </a>
+        <div>
+					<span style="color: #008000;">
+						小米CC9
+					</span>
+            <br />
+            <span style="color: #FF0000;">
+						$400.00
+					</span>
+        </div>
+    </div>
+    <div class="hot">
+        <a href="product_details.html">
+            <img src="img/phone/小米cc9_2.jpg" >
+        </a>
+
+        <div style="height: 40px;">
+					<span style="color: #008000;">
+						小米CC9
+					</span>
+            <br />
+            <span style="color: #FF0000;">
+						$400.00
+					</span>
+        </div>
+    </div>
+</div>
+
+<!-- 分页 -->
+<div class="kong">
+    <div class="page">
+        <nav aria-label="Page navigation" style="height: 40px;">
+            <ul class="pagination" style="height: 40px;">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="count">
+					<span>
+						共28条记录，3页
+					</span>
+        </div>
+    </div>
+
+</div>
+
+<!-- 商城底部 -->
+<div id="footer">
+    <!-- 商城信息 -->
+    <div class="message">
+        <a href="#">商品大全</a>
+        <a href="#">用户中心</a>
+        <a href="#">订单中心</a>
+        <a href="#">我的商家</a>
+        <a href="#">建议和意见</a>
+        <div>
+            <p class="b_url">www.zlj6.com 豫ICP证00000号 豫ICP备0000000000号 豫公网安备0000000000000号 豫网文[2019]0059-0009号</p>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
