@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
     <meta charset="utf-8">
@@ -14,6 +15,7 @@
     <%--引入css--%>
     <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/product/css/style.css"/>
     <script src="${pageContext.request.contextPath }/resources/product/js/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/product/js/productIndex.js"></script>
 
 </head>
 <body onload="swapPic()">
@@ -66,139 +68,26 @@
         <div class="menu">
             <!--菜单列表-->
             <ul class="sec-mainNav">
+                <%--查询品牌--%>
+                <c:forEach items="${brandList}" var="brand">
                 <li>
-                    <div class="menu-tab">
-                        <a href="">iPhone</a>
-                        <div class="fix"></div>
-                    </div>
-                    <span class="menu-more">更多</span>
+                        <input type="hidden" class="brandId" name="${brand.brandId}" value="${brand.brandId}">
+                        <div class="menu-tab">
+                            <a href="/product/findbrandById?${brand.brandId}">${brand.brandName}</a>
+                            <div class="fix"></div>
+                        </div>
+                        <span class="menu-more">更多</span>
                     <!--二级菜单-->
                     <div class="menu-panel">
                         <div class="menu-panel-hd">
-                            <h4>热门手機</h4>
+                            <h4>热销机型</h4>
                             <div class="sub-group">
                                 <a href="">iPhone</a>
-                                <a href="">iPhone</a>
-                                <a href="">iPhone</a>
-                                <a href="">iPhone</a>
                             </div>
                         </div>
                     </div>
                 </li>
-                <li>
-                    <div class="menu-tab">
-                        <a href="">华为</a>
-                        <div class="fix"></div>
-                    </div>
-                    <span class="menu-more">更多</span>
-                    <!--二级菜单-->
-                    <div class="menu-panel">
-                        <div class="menu-panel-hd">
-                            <h4>热门手機</h4>
-                            <div class="sub-group">
-                                <a href="">华为</a>
-                                <a href="">华为</a>
-                                <a href="">华为</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="menu-tab">
-                        <a href="">VIVO</a>
-                        <div class="fix"></div>
-                    </div>
-                    <span class="menu-more">更多</span>
-                    <!--二级菜单-->
-                    <div class="menu-panel">
-                        <div class="menu-panel-hd">
-                            <h4>热门手機</h4>
-                            <div class="sub-group">
-                                <a href="">vivo</a>
-                                <a href="">vivo</a>
-                                <a href="">vivo</a>
-                                <a href="">vivo</a>
-                                <a href="">vivo</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="menu-tab">
-                        <a href="">OPPO</a>
-                        <div class="fix"></div>
-                    </div>
-                    <span class="menu-more">更多</span>
-                    <!--二级菜单-->
-                    <div class="menu-panel">
-                        <div class="menu-panel-hd">
-                            <h4>热门手機</h4>
-                            <div class="sub-group">
-                                <a href="">OPPO</a>
-                                <a href="">OPPO</a>
-                                <a href="">OPPO</a>
-                                <a href="">OPPO</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="menu-tab">
-                        <a href="">小米</a>
-                        <div class="fix"></div>
-                    </div>
-                    <span class="menu-more"></span>
-                    <!--二级菜单-->
-                    <div class="menu-panel">
-                        <div class="menu-panel-hd">
-                            <h4>热门手機</h4>
-                            <div class="sub-group">
-                                <a href="">小米</a>
-                                <a href="">小米</a>
-                                <a href="">小米</a>
-                                <a href="">小米</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="menu-tab">
-                        <a href="">一加</a>
-                        <div class="fix"></div>
-                    </div>
-                    <span class="menu-more">更多</span>
-                    <!--二级菜单-->
-                    <div class="menu-panel">
-                        <div class="menu-panel-hd">
-                            <h4>热门手機</h4>
-                            <div class="sub-group">
-                                <a href="">一加</a>
-                                <a href="">一加</a>
-                                <a href="">一加</a>
-                                <a href="">一加</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="menu-tab">
-                        <a href="">锤子</a>
-                        <div class="fix"></div>
-                    </div>
-                    <span class="menu-more">更多</span>
-                    <!--二级菜单-->
-                    <div class="menu-panel">
-                        <div class="menu-panel-hd">
-                            <h4>热门手機</h4>
-                            <div class="sub-group">
-                                <a href="">锤子</a>
-                                <a href="">锤子</a>
-                                <a href="">锤子</a>
-                                <a href="">锤子</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
+                </c:forEach>
             </ul>
         </div>
 
