@@ -1,0 +1,112 @@
+
+.main_nav {
+    width: 100%;
+    min-width: 1000px;
+    height: 40px;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #a7a7a7;
+}
+
+.main_nav > ul {
+    width: 1000px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+}
+
+.main_nav > ul > li {
+    width: 70px;
+    height: 100%;
+    text-align: center;
+}
+
+.main_nav > ul > li > a {
+    color: black;
+    font-size: 15px;
+}
+
+.main_nav > ul > li > a:hover {
+    color: #f10180;
+}
+
+.main_nav .super {
+    width: 90px;
+}
+
+.super > img {
+    vertical-align: middle;
+    padding-right: 2px;
+    margin-top: -6px;
+}
+
+/*导航栏固定顶部效果*/
+.mainNav_fixed {
+    top: 0;
+    position: fixed;
+    z-index: 999;
+}
+
+.main_nav .category {
+    width: 140px;
+    height: 100%;
+    background: #f10180;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+}
+
+.category > i {
+    display: inline-block;
+    width: 20px;
+    height: 32px;
+    background: url("../image/1536548648745.png");
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.primaryCategory {
+    width: 600px;
+    z-index: 999;
+    background: white;
+    position: absolute;
+    overflow: hidden;
+}
+
+
+.primaryCategory > ul {
+    width: 140px;
+    overflow: hidden;
+    background: #f10180;
+    float: left;
+}
+
+.primaryCategory > ul > li {
+    text-align: center;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+}
+
+.primaryCategory > ul > li:hover {
+    background: white;
+    color: #f10180;
+}
+
+.secondaryCategory {
+    width: 460px;
+    height: 405px;
+    background: white;
+    font-size: 12px;
+    float: right;
+}
+
+.secondaryCategory > a {
+    display: inline-block;
+    width: 80px;
+    height: 25px;
+    color: black;
+    margin-right: 10px;
+}
+.secondaryCategory > a:hover{
+    color: #f10180;
+}

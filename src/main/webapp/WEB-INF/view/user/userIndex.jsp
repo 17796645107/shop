@@ -16,14 +16,14 @@
 <body>
     <div class="user_index">
         <!--头部-->
-        <%--<IndexHeadTop></IndexHeadTop>
-        <UserTopLogo></UserTopLogo>
-        <UserTopNav></UserTopNav>--%>
+        <jsp:include page="../common/header.jsp"/>
+        <jsp:include page="../common/search.jsp"/>
+        <jsp:include page="../common/nav.jsp"/>
         <!--页面主体 -->
         <div class="body">
             <div class="user_warp">
 
-                <UserNav></UserNav>
+<%--                <UserNav></UserNav>--%>
 
                 <!--主界面-->
                 <div class="frame_right" id="frame">
