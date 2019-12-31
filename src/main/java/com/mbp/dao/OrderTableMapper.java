@@ -50,4 +50,6 @@ public interface OrderTableMapper {
      * @mbg.generated Wed Dec 25 17:55:57 CST 2019
      */
     int updateByPrimaryKey(OrderTable record);
+
+    OrderTable findOrderInfo(String orderNumber);
 }
