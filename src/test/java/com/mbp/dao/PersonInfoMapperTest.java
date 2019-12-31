@@ -39,6 +39,15 @@ public class PersonInfoMapperTest extends BaseTest {
 
     @Test
     public void updateByPrimaryKeySelective() {
+        PersonInfo personInfo = new PersonInfo();
+        personInfo.setPersonId(2);
+        personInfo.setBirthday("2019-01-01");
+        personInfo.setEmail("105@qq.com");
+        personInfo.setSex("男");
+        personInfo.setSignature("奥利给!!!!!!");
+        personInfo.setTelephone("18888888888");
+        personInfo.setUsername("无敌是多么寂寞");
+        assertEquals(1,personInfoMapper.updateByPrimaryKeySelective(personInfo));
     }
 
     @Test

@@ -26,7 +26,7 @@
 		<!-- 注入数据源 -->
 		<property name="dataSource" ref="dataSource" />
 		<!-- 加载分页插件 -->
-		<!--<property name="plugins">
+		<property name="plugins">
 			<array>
 				<bean class="com.github.pagehelper.PageHelper">
 					<property name="properties">
@@ -37,7 +37,7 @@
 					</property>
 				</bean>
 			</array>
-		</property>-->
+		</property>
 	</bean>
 
 	<!-- 映射Mapper目录 -->
