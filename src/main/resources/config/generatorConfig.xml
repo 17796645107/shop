@@ -41,7 +41,7 @@
 		<javaClientGenerator targetPackage="com.mbp.dao"
 			targetProject="src/main/java" type="XMLMAPPER" />
 
-        <table schema="shop" tableName="activity" enableCountByExample="false"
+        <!--<table schema="shop" tableName="activity" enableCountByExample="false"
             enableUpdateByExample="false" enableDeleteByExample="false"
             enableSelectByExample="false" selectByExampleQueryId="false">
         </table>
@@ -137,6 +137,15 @@
         </table>
 
         <table schema="shop" tableName="store_standard" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>-->
+
+        <table schema="shop" tableName="order_table" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+        <table schema="shop" tableName="shop_cart" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false" selectByExampleQueryId="false">
         </table>

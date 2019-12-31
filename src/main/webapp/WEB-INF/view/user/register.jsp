@@ -32,7 +32,7 @@
                         <!--手机号码-->
                         <div class="telephone">
                             <i></i>
-                            <input type="text" onblur="checkTelephone();" onfocus="clearTelephoneMsg()"
+                            <input type="text" onblur="checkTelephone();" onfocus="clearTelephoneMsg()" id="telephone"
                                    placeholder="请输入手机号码" required="required"/>
                         </div>
                         <!--提示信息-->
@@ -41,7 +41,8 @@
                         <!--验证码-->
                         <div class="code">
                             <i></i>
-                            <input type="text" onblur="checkValidate()" placeholder="请输入验证码" required="required">
+                            <input type="text" onblur="checkValidate()" placeholder="请输入验证码" id="verificationCode"
+                                   required="required">
                         </div>
                         <input type="button" value="buttonContext" onclick="sendCode()" class="getCode"
                                disabled="disabled" required="required"/>
@@ -51,7 +52,8 @@
                         <!--密码-->
                         <div class="password">
                             <i></i>
-                            <input type="password" onblur="checkPassword()" placeholder="密码以字母开头，6-18位，数字和符号组合"/>
+                            <input type="password" onblur="checkPassword()" placeholder="密码以字母开头，6-18位，数字和符号组合"
+                            id="password"/>
                         </div>
                         <!--提示信息-->
                         <div class="password_msg"></div>
@@ -66,8 +68,8 @@
 
                         <!--用户协议-->
                         <div class="read">
-                            <input type="checkbox" id="user_read" onblur="checkRead()"/><label
-                                for="user_read">我已阅读并接受以下条款：</label>
+                            <input type="checkbox" id="user_read" onblur="checkRead()"/>
+                            <label for="user_read">我已阅读并接受以下条款：</label>
                             <a href="">《唯品会服务条款》</a>
                             <a href="">《隐私条款》</a>
                             <a href="">《唯品支付用户服务协议》</a>
