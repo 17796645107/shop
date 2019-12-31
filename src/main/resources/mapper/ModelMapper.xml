@@ -130,4 +130,12 @@
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where model_id = #{modelId,jdbcType=INTEGER}
   </update>
+
+  <select id="selectModelByTime" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM
+    model
+    where brand_id = #{id}
+  </select>
 </mapper>
