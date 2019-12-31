@@ -18,4 +18,7 @@ public interface PersonAccountMapper {
      * @mbg.generated Wed Dec 25 17:55:57 CST 2019
      */
     int insertSelective(PersonAccount record);
+
+    PersonAccount selectByPersonAccount(PersonAccount personAccount);
+
 }

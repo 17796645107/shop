@@ -176,4 +176,15 @@ public class PersonAccount implements Serializable {
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
+
+    @Override
+    public String toString() {
+        return "PersonAccount{" +
+                "personId=" + personId +
+                ", telephone='" + telephone + '\'' +
+                ", password='" + password + '\'' +
+                ", type=" + type +
+                ", createTime=" + createTime +
+                '}';
+    }
 }

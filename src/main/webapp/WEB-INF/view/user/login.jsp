@@ -34,9 +34,8 @@
                     <div class="login_form">
                         <div class="username">
                             <i class="el-icon-user"></i>
-                            <input type="text" onclick="showUsernameList();"
-                                   onblur="hiddenUsernameList();" placeholder="手机号"
-                                   required="required"/>
+                            <input type="text" onclick="showUsernameList();" onblur="hiddenUsernameList();"
+                                   id="telephone" placeholder="手机号" required="required"/>
                             <div class="usernameList">
                                 <ul>
                                     <li v-for="user in UsernameCookie" onmouseover="fillUsername(user)">
@@ -47,7 +46,7 @@
                         </div>
                         <div class="password">
                             <i class="el-icon-unlock"></i>
-                            <input type="password" placeholder="密码"
+                            <input type="password" id="password" placeholder="密码"
                                    required="required" @keyup.enter="userLogin"/>
                         </div>
                         <div class="group">
@@ -59,7 +58,7 @@
                                 <a href="">忘记密码</a>
                             </div>
                         </div>
-                        <input type="button" class="login_submit" value="登录" onclick="userLogin()"/>
+                        <input type="button" class="login_submit" value="登录" onclick="userLogin();"/>
                     </div>
                     <div class="other">
                         <div class="weChat">
@@ -84,5 +83,6 @@
     </div>
 
 </body>
+<script src="${pageContext.request.contextPath }/resources/common/jquery-3.3.1.min.js"></script>
 <script src="${pageContext.request.contextPath }/resources/user/js/login.js"></script>
 </html>
