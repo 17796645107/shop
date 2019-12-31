@@ -81,9 +81,13 @@
                     <div class="menu-panel">
                         <div class="menu-panel-hd">
                             <h4>热销机型</h4>
-                            <div class="sub-group">
-                                <a href="">iPhone</a>
-                            </div>
+                                <div class="sub-group">
+                                    <c:forEach items="${modelList}" var="model">
+                                        <c:if test="${brand.brandId==model.brandId}">
+                                            <a href="">${model.modelType}</a>
+                                         </c:if>
+                                    </c:forEach>
+                                </div>
                         </div>
                     </div>
                 </li>
