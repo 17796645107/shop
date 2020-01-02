@@ -1,14 +1,23 @@
 package com.mbp.service;
 
+import com.mbp.dao.ModelMapper;
 import com.mbp.entity.Model;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public interface ModelService {
+@Service(value = "modeService")
+public class ModelService {
 
     /**
-     * 查询新品
-     * @return
+     * 注入机型mapper
      */
-    List<Model> selectModelByTime();
+    @Autowired
+    ModelMapper modelMapper;
+
+    public List<Model> selectModelByTime() {
+        List<Model> models =  modelMapper.selectModelByTime();
+        return models;
+    }
 }

@@ -1,15 +1,22 @@
 package com.mbp.service;
 
+import com.mbp.dao.BrandMapper;
 import com.mbp.entity.Brand;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public interface BrandService {
+@Service
+public class BrandService {
 
-    /*
-     * 查询商品品牌
-     *
-     * */
-    List<Brand> selectAll();
+    /*注入mapper*/
+    @Autowired
+    BrandMapper brandMapper;
 
+    public List<Brand> selectAll() {
+        //调取方法
+        List<Brand> brands = brandMapper.selectAll();
+        return brands;
+    }
 }

@@ -111,6 +111,9 @@ body {
 	position: absolute;
 	top: 132px;
 	right: 234px;
+	position: relative;
+	left: 220px;
+	top: 10px;
 }
 
 #body #product .product_roll img {

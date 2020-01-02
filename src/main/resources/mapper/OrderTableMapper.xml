@@ -15,7 +15,20 @@
     <result column="activity_amount" jdbcType="DECIMAL" property="activityAmount" />
     <result column="order_time" jdbcType="VARCHAR" property="orderTime" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="username"  property="userName" />
+    <result column="address"  property="address" />
+    <collection property="productInfos" ofType="com.mbp.entity.ProductInfo">
+      <id column="product_id" jdbcType="INTEGER" property="productId" />
+      <result column="product_name" jdbcType="VARCHAR" property="productName" />
+      <result column="model_id" jdbcType="INTEGER" property="modelId" />
+      <result column="product_image" jdbcType="VARCHAR" property="productImage" />
+      <result column="product_info" jdbcType="VARCHAR" property="productInfo" />
+      <result column="product_status" jdbcType="INTEGER" property="productStatus" />
+      <result column="product_sale_num" jdbcType="INTEGER" property="productSaleNum" />
+      <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    </collection>
   </resultMap>
+
   <sql id="Base_Column_List">
     <!--
       WARNING - @mbg.generated
@@ -166,4 +179,17 @@
       create_time = #{createTime,jdbcType=TIMESTAMP}
     where order_number = #{orderNumber,jdbcType=VARCHAR}
   </update>
+  
+  <select id="findOrderInfo" parameterType="string" resultMap="BaseResultMap">
+        SELECT order_table.order_number,order_table.actual_amount,person_info.username,
+        person_address.address,product_info.product_name
+        from order_table
+        INNER JOIN person_info ON order_table.person_id=person_info.person_id
+        INNER JOIN person_address ON person_address.id=order_table.address_id
+        INNER JOIN order_shop_cart ON order_shop_cart.order_number=order_table.order_number
+        INNER JOIN shop_cart ON shop_cart.shop_cart_id = order_shop_cart.shop_cart_id
+        INNER JOIN product_info ON product_info.product_id=shop_cart.product_id
+        WHERE order_table.order_number= #{string}
+
+  </select>
 </mapper>
