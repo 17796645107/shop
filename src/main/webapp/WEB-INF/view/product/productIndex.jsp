@@ -210,6 +210,13 @@
 
     <div class="kong">
     </div>
+
+    <div class="activity">
+        <img src="${pageContext.request.contextPath }/resources/product/img/activity/activey2.jpg">
+    </div>
+
+    <div class="kong">
+    </div>
     <div class="text">
         <div>
             <span>
@@ -316,6 +323,12 @@
             </div>
         </c:forEach>
 
+    </div>
+
+    <div class="kong">
+    </div>
+    <div class="activity">
+        <img src="${pageContext.request.contextPath }/resources/product/img/activity/activey3.jpg">
     </div>
 
     <div class="kong">
