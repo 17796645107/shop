@@ -126,7 +126,7 @@ body {
 	width: 100%;
 }
 
-#body #product_hot {
+#body .product_hot {
 	height: 280px;
 	width: 100%;
 	background-color: #E8E8E8;
@@ -168,6 +168,38 @@ body {
 	width: 50px;
 	margin: 0 auto;
 }
+/*商品专区*/
+.brand {
+	height: 260px;
+	width: 196px;
+	background-color: #F2DEDE;
+	margin-left: 13px;
+	float: left;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+}
+
+.brand .img{
+	margin-top: 20px;
+}
+
+.brand .img img{
+	height: 69px;
+	width: 196px;
+}
+
+.brand .division{
+	height: 120px;
+	width: 120px;
+	font-size: 18px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.brand .division a{
+	color: #D9534F;
+}
 
 /* 商品图片 */
 .hot img {
@@ -177,7 +209,7 @@ body {
 	border-radius: 10px;
 }
 
-#product_hot .hot:hover {
+.product_hot .hot:hover {
 	transition: all ease 0.5s;
 	box-shadow: 0px 0px 20px #C0C0C0;
 	z-index:5;

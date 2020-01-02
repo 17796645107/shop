@@ -111,13 +111,13 @@
     <div class="text">
         <div>
             <span>
-               <h1>热销推荐</h1>
+               <h1>热 销 推 荐</h1>
             </span>
         </div>
     </div>
 
     <!-- 商品推荐 -->
-    <div id="product_hot">
+    <div class="product_hot">
         <c:forEach items="${productInfoList}" var="productInfo">
         <div class="hot">
             <%--判断：--%>
@@ -155,30 +155,171 @@
     <div class="kong">
     </div>
 
-    <%--<div class="text">
+    <div class="text">
         <div>
             <span>
-               <h1>华为专区</h1>
+               <h1>华 为 专 区</h1>
             </span>
         </div>
     </div>
 
+    <%--专区--%>
+    <div class="product_hot">
+
+        <div class="brand">
+            <div class="img">
+                <img src="${pageContext.request.contextPath }/resources/product/img/brand/huawei-logo.png" />
+            </div>
+            <div class="division">
+                <h1><a href="#">华 为 专 区</a></h1>
+            </div>
+        </div>
+
+        <c:forEach items="${huaweiList}" var="huawei">
+            <div class="hot">
+                <c:if test="${!(huawei.activityReduceProduct.activityReduceId eq null)}">
+                    <div>
+                        <span class="activity01">促销</span>
+                    </div>
+                </c:if>
+
+                <c:if test="${!(empty huawei.activityDiscountProduct.activityDiscountId)}">
+                    <div>
+                        <span class="activity02">打折</span>
+                    </div>
+                </c:if>
+                <c:if test="${empty huawei.activityDiscountProduct.activityDiscountId && empty huawei.activityReduceProduct.activityReduceId}">
+                    <span>&nbsp;</span>
+                </c:if>
+                <a href="product_details.html">
+                    <img src="${pageContext.request.contextPath }/resources/product/img/phone/${huawei.productImage}">
+                </a>
+                <div>
+                    <span style="color: #008000;">
+                        <c:out value="${huawei.model.modelType}"></c:out>
+                    </span>
+                <br />
+                <span style="color: #FF0000;">
+                        $<c:out value="${huawei.stock.productPrice}"></c:out>
+                    </span>
+                </div>
+            </div>
+        </c:forEach>
+
+    </div>
+
+    <div class="kong">
+    </div>
     <div class="text">
         <div>
             <span>
-               <h1>苹果专区</h1>
+               <h1>苹 果 专 区</h1>
             </span>
         </div>
     </div>
 
+    <%--苹果专区--%>
+    <div class="product_hot">
+
+        <div class="brand" style="background-color: white;">
+            <div>
+                <img style="height: 103px;" src="${pageContext.request.contextPath }/resources/product/img/brand/iphone-logo-527.png" />
+            </div>
+            <div class="division" style="margin-top: 10px;">
+                <h1><a href="#" style="color: #555555;">苹 果 专 区</a></h1>
+            </div>
+        </div>
+
+        <%--最新商品列表--%>
+        <c:forEach items="${iphoneList}" var="iphone">
+            <div class="hot">
+                <c:if test="${!(iphone.activityReduceProduct.activityReduceId eq null)}">
+                    <div>
+                        <span class="activity01">促销</span>
+                    </div>
+                </c:if>
+
+                <c:if test="${!(empty iphone.activityDiscountProduct.activityDiscountId)}">
+                    <div>
+                        <span class="activity02">打折</span>
+                    </div>
+                </c:if>
+                <c:if test="${empty iphone.activityDiscountProduct.activityDiscountId && empty iphone.activityReduceProduct.activityReduceId}">
+                    <span>&nbsp;</span>
+                </c:if>
+                <a href="product_details.html">
+                    <img src="${pageContext.request.contextPath }/resources/product/img/phone/${iphone.productImage}">
+                </a>
+                <div>
+                    <span style="color: #008000;">
+                        <c:out value="${iphone.model.modelType}"></c:out>
+                    </span>
+                    <br />
+                    <span style="color: #FF0000;">
+                        $<c:out value="${iphone.stock.productPrice}"></c:out>
+                    </span>
+                </div>
+            </div>
+        </c:forEach>
+    </div>
+
+
+    <div class="kong">
+    </div>
     <div class="text">
         <div>
             <span>
-               <h1>小米专区</h1>
+               <h1>小 米 专 区</h1>
             </span>
         </div>
-    </div>--%>
+    </div>
 
+    <div class="product_hot">
+
+        <div class="brand"  style="background-color: #DCDCDC;">
+            <div class="img">
+                <img style="height: 65px;width: 160px;margin-left: 20px;" src="${pageContext.request.contextPath }/resources/product/img/brand/xiaomi-33323.png" />
+            </div>
+            <div class="division">
+                <h1><a href="#" style="color:#888888">小 米 专 区</a></h1>
+            </div>
+        </div>
+
+        <c:forEach items="${miList}" var="mi">
+            <div class="hot">
+                <c:if test="${!(mi.activityReduceProduct.activityReduceId eq null)}">
+                    <div>
+                        <span class="activity01">促销</span>
+                    </div>
+                </c:if>
+
+                <c:if test="${!(empty mi.activityDiscountProduct.activityDiscountId)}">
+                    <div>
+                        <span class="activity02">打折</span>
+                    </div>
+                </c:if>
+                <c:if test="${empty mi.activityDiscountProduct.activityDiscountId && empty mi.activityReduceProduct.activityReduceId}">
+                    <span>&nbsp;</span>
+                </c:if>
+                <a href="product_details.html">
+                    <img src="${pageContext.request.contextPath }/resources/product/img/phone/${mi.productImage}">
+                </a>
+                <div>
+                    <span style="color: #008000;">
+                        <c:out value="${mi.model.modelType}"></c:out>
+                    </span>
+                    <br />
+                    <span style="color: #FF0000;">
+                        $<c:out value="${mi.stock.productPrice}"></c:out>
+                    </span>
+                </div>
+            </div>
+        </c:forEach>
+
+    </div>
+
+    <div class="kong">
+    </div>
     <div class="text">
         <div>
             <span>

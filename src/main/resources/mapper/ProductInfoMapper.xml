@@ -103,6 +103,70 @@
       LIMIT 0,11
   </select>
 
+  <!--查询华为专区最新单品-->
+  <select id="selectProductInfoByHuaWei" resultMap="BaseResultMap">
+    SELECT
+        pri.product_image,
+        st.product_price,
+        mo.model_type,
+        arp.*,
+        adp.*
+    FROM
+        product_info pri
+      INNER JOIN model mo ON mo.model_id=pri.model_id
+      INNER JOIN stock st ON st.model_id=mo.model_id
+        INNER JOIN brand br ON br.brand_id=mo.brand_id
+        left JOIN activity_reduce_product arp ON arp.produc_id=pri.product_id
+        left JOIN activity_discount_product adp ON adp.produc_id=product_id
+        WHERE br.brand_id=1
+        ORDER BY
+        pri.create_time DESC
+        LIMIT 0,4
+  </select>
+
+
+  <!--查询苹果专区最新单品-->
+  <select id="selectProductInfoByIphone" resultMap="BaseResultMap">
+    SELECT
+        pri.product_image,
+        st.product_price,
+        mo.model_type,
+        arp.*,
+        adp.*
+    FROM
+        product_info pri
+      INNER JOIN model mo ON mo.model_id=pri.model_id
+      INNER JOIN stock st ON st.model_id=mo.model_id
+        INNER JOIN brand br ON br.brand_id=mo.brand_id
+        left JOIN activity_reduce_product arp ON arp.produc_id=pri.product_id
+        left JOIN activity_discount_product adp ON adp.produc_id=product_id
+        WHERE br.brand_id=5
+        ORDER BY
+        pri.create_time DESC
+        LIMIT 0,4
+  </select>
+
+  <!--查询苹果专区最新单品-->
+  <select id="selectProductInfoByMi" resultMap="BaseResultMap">
+    SELECT
+        pri.product_image,
+        st.product_price,
+        mo.model_type,
+        arp.*,
+        adp.*
+    FROM
+        product_info pri
+      INNER JOIN model mo ON mo.model_id=pri.model_id
+      INNER JOIN stock st ON st.model_id=mo.model_id
+        INNER JOIN brand br ON br.brand_id=mo.brand_id
+        left JOIN activity_reduce_product arp ON arp.produc_id=pri.product_id
+        left JOIN activity_discount_product adp ON adp.produc_id=product_id
+        WHERE br.brand_id=2
+        ORDER BY
+        pri.create_time DESC
+        LIMIT 0,4
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--
       WARNING - @mbg.generated

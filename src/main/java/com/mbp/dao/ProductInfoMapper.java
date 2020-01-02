@@ -64,4 +64,22 @@ public interface ProductInfoMapper {
      * @return
      */
     List<ProductInfo> selectProductInfoBy0Go10();
+
+    /**
+     * 查询华为最新单品展示专区
+     * @return
+     */
+    List<ProductInfo> selectProductInfoByHuaWei();
+
+    /**
+     * 查询苹果最新单品展示专区
+     * @return
+     */
+    List<ProductInfo> selectProductInfoByIphone();
+
+    /**
+     * 查询小米专区最新单品
+     * @return
+     */
+    List<ProductInfo> selectProductInfoByMi();
 }

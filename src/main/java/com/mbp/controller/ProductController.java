@@ -51,6 +51,11 @@ public class ProductController {
         List<ProductInfo> productInfos = productinfoService.selectProductInfoByProductSaleNum();
         //4.查询更多单品
         List<ProductInfo> productInfosMore = productinfoService.selectProductInfoBy0Go10();
+        //5.查询华为专区
+        List<ProductInfo> huaweis = productinfoService.selectProductInfoByHuaWei();
+        List<ProductInfo> iphones = productinfoService.selectProductInfoByIphone();
+        List<ProductInfo> mis = productinfoService.selectProductInfoByMi();
+
         //封装返回商品品牌
         model.addAttribute("brandList",brands);
         //封装返回机型品牌
@@ -59,6 +64,10 @@ public class ProductController {
         model.addAttribute("productInfoList",productInfos);
         //更多单品
         model.addAttribute("productInfoMoreList",productInfosMore);
+        //华为专区
+        model.addAttribute("huaweiList",huaweis);
+        model.addAttribute("iphoneList",iphones);
+        model.addAttribute("miList",mis);
         System.out.println(models.size());
         //跳转页面
         return "product/productIndex";

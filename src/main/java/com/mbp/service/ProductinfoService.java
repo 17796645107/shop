@@ -48,4 +48,31 @@ public class ProductinfoService {
         System.out.println(productInfoMores.size());
         return productInfoMores;
     }
+
+    /**
+     * 查询华为最新单品
+     * @return
+     */
+    public List<ProductInfo> selectProductInfoByHuaWei() {
+        List<ProductInfo> huaweis = productInfoMapper.selectProductInfoByHuaWei();
+        return huaweis;
+    }
+
+    /**
+     * 查询苹果最新单品
+     * @return
+     */
+    public List<ProductInfo> selectProductInfoByIphone() {
+        List<ProductInfo> iphones = productInfoMapper.selectProductInfoByIphone();
+        return iphones;
+    }
+
+    /**
+     * 查看小米专区最新产品
+     * @return
+     */
+    public List<ProductInfo> selectProductInfoByMi() {
+        List<ProductInfo> mis = productInfoMapper.selectProductInfoByMi();
+        return mis;
+    }
 }
