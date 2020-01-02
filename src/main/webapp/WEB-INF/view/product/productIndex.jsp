@@ -5,7 +5,8 @@
   Time: 10:27
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" isELIgnored="false" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <meta charset="utf-8">
@@ -14,6 +15,7 @@
     <%--引入css--%>
     <link rel="stylesheet" href="${pageContext.request.contextPath }/resources/product/css/style.css"/>
     <script src="${pageContext.request.contextPath }/resources/product/js/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/product/js/productIndex.js"></script>
 
 </head>
 <body onload="swapPic()">
@@ -49,7 +51,8 @@
         <div class="container">
             <form action="" class="parent">
                 <input type="text" class="search" placeholder="搜索">
-                <input type="button" name="" id="" class="btn" style="background-image: url(${pageContext.request.contextPath }/resources/product/img/log2.1.png);">
+                <input type="button" name="" id="" class="btn"
+                       style="background-image: url(${pageContext.request.contextPath }/resources/product/img/log2.1.png);">
             </form>
         </div>
     </div>
@@ -66,145 +69,36 @@
         <div class="menu">
             <!--菜单列表-->
             <ul class="sec-mainNav">
-                <li>
-                    <div class="menu-tab">
-                        <a href="">iPhone</a>
-                        <div class="fix"></div>
-                    </div>
-                    <span class="menu-more">更多</span>
-                    <!--二级菜单-->
-                    <div class="menu-panel">
-                        <div class="menu-panel-hd">
-                            <h4>热门手機</h4>
-                            <div class="sub-group">
-                                <a href="">iPhone</a>
-                                <a href="">iPhone</a>
-                                <a href="">iPhone</a>
-                                <a href="">iPhone</a>
+                <%--查询品牌--%>
+                <c:forEach items="${brandList}" var="brand">
+                    <li>
+                        <input type="hidden" class="brandId" name="${brand.brandId}" value="${brand.brandId}">
+                        <div class="menu-tab">
+                            <a href="/product/findbrandById?${brand.brandId}">${brand.brandName}</a>
+                            <div class="fix"></div>
+                        </div>
+                        <span class="menu-more">更多</span>
+                        <!--二级菜单-->
+                        <div class="menu-panel">
+                            <div class="menu-panel-hd">
+                                <h4>热销机型</h4>
+                                <div class="sub-group">
+                                    <c:forEach items="${modelList}" var="model">
+                                        <c:if test="${brand.brandId==model.brandId}">
+                                            <a href="">${model.modelType}</a>
+                                        </c:if>
+                                    </c:forEach>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="menu-tab">
-                        <a href="">华为</a>
-                        <div class="fix"></div>
-                    </div>
-                    <span class="menu-more">更多</span>
-                    <!--二级菜单-->
-                    <div class="menu-panel">
-                        <div class="menu-panel-hd">
-                            <h4>热门手機</h4>
-                            <div class="sub-group">
-                                <a href="">华为</a>
-                                <a href="">华为</a>
-                                <a href="">华为</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="menu-tab">
-                        <a href="">VIVO</a>
-                        <div class="fix"></div>
-                    </div>
-                    <span class="menu-more">更多</span>
-                    <!--二级菜单-->
-                    <div class="menu-panel">
-                        <div class="menu-panel-hd">
-                            <h4>热门手機</h4>
-                            <div class="sub-group">
-                                <a href="">vivo</a>
-                                <a href="">vivo</a>
-                                <a href="">vivo</a>
-                                <a href="">vivo</a>
-                                <a href="">vivo</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="menu-tab">
-                        <a href="">OPPO</a>
-                        <div class="fix"></div>
-                    </div>
-                    <span class="menu-more">更多</span>
-                    <!--二级菜单-->
-                    <div class="menu-panel">
-                        <div class="menu-panel-hd">
-                            <h4>热门手機</h4>
-                            <div class="sub-group">
-                                <a href="">OPPO</a>
-                                <a href="">OPPO</a>
-                                <a href="">OPPO</a>
-                                <a href="">OPPO</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="menu-tab">
-                        <a href="">小米</a>
-                        <div class="fix"></div>
-                    </div>
-                    <span class="menu-more"></span>
-                    <!--二级菜单-->
-                    <div class="menu-panel">
-                        <div class="menu-panel-hd">
-                            <h4>热门手機</h4>
-                            <div class="sub-group">
-                                <a href="">小米</a>
-                                <a href="">小米</a>
-                                <a href="">小米</a>
-                                <a href="">小米</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="menu-tab">
-                        <a href="">一加</a>
-                        <div class="fix"></div>
-                    </div>
-                    <span class="menu-more">更多</span>
-                    <!--二级菜单-->
-                    <div class="menu-panel">
-                        <div class="menu-panel-hd">
-                            <h4>热门手機</h4>
-                            <div class="sub-group">
-                                <a href="">一加</a>
-                                <a href="">一加</a>
-                                <a href="">一加</a>
-                                <a href="">一加</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="menu-tab">
-                        <a href="">锤子</a>
-                        <div class="fix"></div>
-                    </div>
-                    <span class="menu-more">更多</span>
-                    <!--二级菜单-->
-                    <div class="menu-panel">
-                        <div class="menu-panel-hd">
-                            <h4>热门手機</h4>
-                            <div class="sub-group">
-                                <a href="">锤子</a>
-                                <a href="">锤子</a>
-                                <a href="">锤子</a>
-                                <a href="">锤子</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
+                    </li>
+                </c:forEach>
             </ul>
         </div>
 
         <!-- 滚动框 -->
         <div class="product_roll">
-            <img name ="randimg" src="${pageContext.request.contextPath }/resources/product/img/poster/haibao2.jpg">
+            <img name="randimg" src="${pageContext.request.contextPath }/resources/product/img/poster/haibao2.jpg">
         </div>
 
     </div>
@@ -216,84 +110,31 @@
     <!-- 热销推荐 -->
     <div class="text">
         <div>
-					<span>
-						<a href="#">热销推荐</a>
-					</span>
+            <span>
+                <a href="#">热销推荐</a>
+            </span>
         </div>
     </div>
 
     <!-- 商品推荐 -->
     <div id="product_hot">
+
+        <c:forEach items="${productInfoList}" var="productInfo">
         <div class="hot">
             <a href="product_details.html">
-                <img src="${pageContext.request.contextPath }/resources/product/img/phone/小米cc9_2.jpg" >
+                <img src="${pageContext.request.contextPath }/resources/product/img/phone/小米cc9_2.jpg">
             </a>
             <div>
-						<span style="color: #008000;">
-							小米CC9
-						</span>
-                <br />
+                <span style="color: #008000;">
+                    <c:out value="${productInfo.model.modelType}"></c:out>
+                </span>
+                <br/>
                 <span style="color: #FF0000;">
-							$400.00
-						</span>
+                    <c:out value="${productInfo.stock.productPrice}"></c:out>
+                </span>
             </div>
         </div>
-        <div class="hot">
-            <a href="product_details.html">
-                <img src="img/phone/小米cc9_2.jpg" >
-            </a>
-            <div>
-						<span style="color: #008000;">
-							小米CC9
-						</span>
-                <br />
-                <span style="color: #FF0000;">
-							$400.00
-						</span>
-            </div>
-        </div>
-        <div class="hot">
-            <a href="product_details.html">
-                <img src="img/phone/小米cc9_2.jpg" >
-            </a>
-            <div>
-						<span style="color: #008000;">
-							小米CC9
-						</span>
-                <br />
-                <span style="color: #FF0000;">
-							$400.00
-						</span>
-            </div>
-        </div>
-        <div class="hot">
-            <a href="product_details.html">
-                <img src="img/phone/小米cc9_2.jpg" >
-            </a>
-            <div>
-						<span style="color: #008000;">
-							小米CC9
-						</span>
-                <br />
-                <span style="color: #FF0000;">
-							$400.00
-						</span>
-            </div>
-        </div>
-        <div class="hot">
-            <a href="product_details.html">
-                <img src="img/phone/小米cc9_2.jpg" >
-            </a>
-            <div>
-						<span style="color: #008000;">
-							小米CC9
-						</span>
-                <br />
-                <span style="color: #FF0000;">
-							$400.00
-						</span>
-            </div>
-        </div>
+        </c:forEach>
     </div>
 
     <div class="kong">
@@ -311,13 +152,13 @@
     <div id="more">
         <div class="hot">
             <a href="product_details.html">
-                <img src="img/phone/小米cc9_2.jpg" >
+                <img src="img/phone/小米cc9_2.jpg">
             </a>
             <div>
 						<span style="color: #008000;">
 							小米CC9
 						</span>
-                <br />
+                <br/>
                 <span style="color: #FF0000;">
 							$400.00
 						</span>
@@ -325,13 +166,13 @@
         </div>
         <div class="hot">
             <a href="product_details.html">
-                <img src="img/phone/小米cc9_2.jpg" >
+                <img src="img/phone/小米cc9_2.jpg">
             </a>
             <div>
 						<span style="color: #008000;">
 							小米CC9
 						</span>
-                <br />
+                <br/>
                 <span style="color: #FF0000;">
 							$400.00
 						</span>
@@ -339,13 +180,13 @@
         </div>
         <div class="hot">
             <a href="#">
-                <img src="img/phone/小米cc9_2.jpg" >
+                <img src="img/phone/小米cc9_2.jpg">
             </a>
             <div>
 						<span style="color: #008000;">
 							小米CC9
 						</span>
-                <br />
+                <br/>
                 <span style="color: #FF0000;">
 							$400.00
 						</span>
@@ -353,13 +194,13 @@
         </div>
         <div class="hot">
             <a href="#">
-                <img src="img/phone/小米cc9_2.jpg" >
+                <img src="img/phone/小米cc9_2.jpg">
             </a>
             <div>
 						<span style="color: #008000;">
 							小米CC9
 						</span>
-                <br />
+                <br/>
                 <span style="color: #FF0000;">
 							$400.00
 						</span>
@@ -367,13 +208,13 @@
         </div>
         <div class="hot">
             <a href="#">
-                <img src="img/phone/小米cc9_2.jpg" >
+                <img src="img/phone/小米cc9_2.jpg">
             </a>
             <div>
 						<span style="color: #008000;">
 							小米CC9
 						</span>
-                <br />
+                <br/>
                 <span style="color: #FF0000;">
 							$400.00
 						</span>
@@ -381,13 +222,13 @@
         </div>
         <div class="hot">
             <a href="#">
-                <img src="img/phone/小米cc9_2.jpg" >
+                <img src="img/phone/小米cc9_2.jpg">
             </a>
             <div>
 						<span style="color: #008000;">
 							小米CC9
 						</span>
-                <br />
+                <br/>
                 <span style="color: #FF0000;">
 							$400.00
 						</span>
@@ -424,19 +265,19 @@
 </body>
 </html>
 <script type="text/javascript">
-    $(function() {
+    $(function () {
         var $top = $('.sec-mainNav').offset().top + $('.sec-mainNav').height()
         //左侧导航动画
-        $('.sec-mainNav li').on('mouseenter', function() {
+        $('.sec-mainNav li').on('mouseenter', function () {
             var $height = $(this).offset().top + $(this).find('.menu-panel').outerHeight();
             $(this).find('.menu-panel').show();
-            if($height - $top >= 0) {
+            if ($height - $top >= 0) {
                 $(this).find('.menu-panel').css({
                     top: -($height - $top) + 'px'
                 })
             }
         });
-        $('.sec-mainNav li').on('mouseleave', function() {
+        $('.sec-mainNav li').on('mouseleave', function () {
             $(this).find('.menu-panel').hide();
         });
     });
@@ -456,14 +297,15 @@
     images[3].src = "${pageContext.request.contextPath }/resources/product/img/poster/haibao3.jpg";
     images[4] = new Image();
     images[4].src = "${pageContext.request.contextPath }/resources/product/img/poster/haibao4.jpg";
-    function swapPic(){
-        var imgnum = images.length-1;
-        do{
+
+    function swapPic() {
+        var imgnum = images.length - 1;
+        do {
             var randnum = Math.random();
-            randl = Math.round((imgnum-1)*randnum)+1;
-        }while(randl==useRand);
+            randl = Math.round((imgnum - 1) * randnum) + 1;
+        } while (randl == useRand);
         useRand = randl;
         document.randimg.src = images[useRand].src
-        setTimeout('swapPic()',4000);
+        setTimeout('swapPic()', 4000);
     }
 </script>
