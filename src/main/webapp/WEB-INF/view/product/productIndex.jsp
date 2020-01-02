@@ -111,28 +111,43 @@
     <div class="text">
         <div>
             <span>
-                <a href="#">热销推荐</a>
+               <h1>热销推荐</h1>
             </span>
         </div>
     </div>
 
     <!-- 商品推荐 -->
     <div id="product_hot">
-
         <c:forEach items="${productInfoList}" var="productInfo">
         <div class="hot">
-            <a href="product_details.html">
-                <img src="${pageContext.request.contextPath }/resources/product/img/phone/小米cc9_2.jpg">
-            </a>
-            <div>
+            <%--判断：--%>
+            <c:if test="${!(productInfo.activityReduceProduct.activityReduceId eq null)}">
+                <div>
+                    <span class="activity01">促销</span>
+                </div>
+            </c:if>
+
+            <c:if test="${!(empty productInfo.activityDiscountProduct.activityDiscountId)}">
+                <div>
+                    <span class="activity02">打折</span>
+                </div>
+            </c:if>
+            <c:if test="${empty productInfo.activityDiscountProduct.activityDiscountId && empty productInfo.activityReduceProduct.activityReduceId}">
+                <span>&nbsp;</span>
+            </c:if>
+                <a href="product_details.html">
+                    <img src="${pageContext.request.contextPath }/resources/product/img/phone/${productInfo.productImage}">
+                </a>
+                <div>
                 <span style="color: #008000;">
                     <c:out value="${productInfo.model.modelType}"></c:out>
                 </span>
-                <br/>
-                <span style="color: #FF0000;">
-                    <c:out value="${productInfo.stock.productPrice}"></c:out>
+                    <br/>
+                    <span style="color: #FF0000;">
+                    ¥<c:out value="${productInfo.stock.productPrice}"></c:out>
                 </span>
-            </div>
+                </div>
+
         </div>
         </c:forEach>
     </div>
@@ -140,100 +155,79 @@
     <div class="kong">
     </div>
 
+    <%--<div class="text">
+        <div>
+            <span>
+               <h1>华为专区</h1>
+            </span>
+        </div>
+    </div>
+
     <div class="text">
         <div>
-					<span>
-						<a href="product_list.html">更多商品</a>
-					</span>
+            <span>
+               <h1>苹果专区</h1>
+            </span>
+        </div>
+    </div>
+
+    <div class="text">
+        <div>
+            <span>
+               <h1>小米专区</h1>
+            </span>
+        </div>
+    </div>--%>
+
+    <div class="text">
+        <div>
+            <span>
+               <h1>更多商品</h1>
+            </span>
         </div>
     </div>
 
     <!-- 更多商品 -->
     <div id="more">
-        <div class="hot">
-            <a href="product_details.html">
-                <img src="img/phone/小米cc9_2.jpg">
-            </a>
-            <div>
+        <c:forEach items="${productInfoMoreList}" var="more">
+            <div class="hot">
+
+                <%--活动判断--%>
+                <%--该商品存在打折活动id--%>
+                <c:if test="${!(empty more.activityDiscountProduct.activityDiscountId)}">
+                    <%--显示打折span--%>
+                    <div>
+                        <span class="activity02">打折</span>
+                    </div>
+                </c:if>
+                <%--该商品存在促销活动的ID--%>
+                <c:if test="${!empty more.activityReduceProduct.activityReduceId}">
+                    <%--显示促销活动--%>
+                    <div>
+                        <span class="activity01">促销</span>
+                    </div>
+                </c:if>
+
+                <%--都不存在--%>
+                <c:if test="${empty more.activityReduceProduct.activityReduceId && empty more.activityDiscountProduct.activityDiscountId}">
+                    <%--空，不然样式会看着不舒服--%>
+                    <span>&nbsp;</span>
+                </c:if>
+
+                <a href="product_details.html">
+                    <img src="${pageContext.request.contextPath }/resources/product/img/phone/${more.productImage}">
+                </a>
+                <div>
 						<span style="color: #008000;">
-							小米CC9
+							<c:out value="${more.model.modelType}"></c:out>
 						</span>
-                <br/>
-                <span style="color: #FF0000;">
-							$400.00
+                    <br/>
+                    <span style="color: #FF0000;">
+							¥<c:out value="${more.stock.productPrice}"></c:out>
 						</span>
+                </div>
             </div>
-        </div>
-        <div class="hot">
-            <a href="product_details.html">
-                <img src="img/phone/小米cc9_2.jpg">
-            </a>
-            <div>
-						<span style="color: #008000;">
-							小米CC9
-						</span>
-                <br/>
-                <span style="color: #FF0000;">
-							$400.00
-						</span>
-            </div>
-        </div>
-        <div class="hot">
-            <a href="#">
-                <img src="img/phone/小米cc9_2.jpg">
-            </a>
-            <div>
-						<span style="color: #008000;">
-							小米CC9
-						</span>
-                <br/>
-                <span style="color: #FF0000;">
-							$400.00
-						</span>
-            </div>
-        </div>
-        <div class="hot">
-            <a href="#">
-                <img src="img/phone/小米cc9_2.jpg">
-            </a>
-            <div>
-						<span style="color: #008000;">
-							小米CC9
-						</span>
-                <br/>
-                <span style="color: #FF0000;">
-							$400.00
-						</span>
-            </div>
-        </div>
-        <div class="hot">
-            <a href="#">
-                <img src="img/phone/小米cc9_2.jpg">
-            </a>
-            <div>
-						<span style="color: #008000;">
-							小米CC9
-						</span>
-                <br/>
-                <span style="color: #FF0000;">
-							$400.00
-						</span>
-            </div>
-        </div>
-        <div class="hot">
-            <a href="#">
-                <img src="img/phone/小米cc9_2.jpg">
-            </a>
-            <div>
-						<span style="color: #008000;">
-							小米CC9
-						</span>
-                <br/>
-                <span style="color: #FF0000;">
-							$400.00
-						</span>
-            </div>
-        </div>
+        </c:forEach>
     </div>
 
     <div class="kong">

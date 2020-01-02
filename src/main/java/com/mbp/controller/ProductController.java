@@ -49,12 +49,16 @@ public class ProductController {
         List<com.mbp.entity.Model> models = modelService.selectModelByTime();
         //3.查询热销机型
         List<ProductInfo> productInfos = productinfoService.selectProductInfoByProductSaleNum();
+        //4.查询更多单品
+        List<ProductInfo> productInfosMore = productinfoService.selectProductInfoBy0Go10();
         //封装返回商品品牌
         model.addAttribute("brandList",brands);
         //封装返回机型品牌
         model.addAttribute("modelList",models);
         //热销单品
         model.addAttribute("productInfoList",productInfos);
+        //更多单品
+        model.addAttribute("productInfoMoreList",productInfosMore);
         System.out.println(models.size());
         //跳转页面
         return "product/productIndex";

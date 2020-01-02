@@ -58,4 +58,10 @@ public interface ProductInfoMapper {
      * @return ProductInfo
      */
     List<ProductInfo> selectProductInfoByProductSaleNum();
+
+    /**
+     * 查询更多单品
+     * @return
+     */
+    List<ProductInfo> selectProductInfoBy0Go10();
 }

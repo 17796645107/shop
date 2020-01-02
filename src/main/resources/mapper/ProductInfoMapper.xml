@@ -84,6 +84,25 @@
         LIMIT 0,5
   </select>
 
+  <!--查看更多单品-->
+  <select id="selectProductInfoBy0Go10" resultMap="BaseResultMap">
+    SELECT
+        pri.product_image,
+        st.product_price,
+        mo.model_type,
+        arp.*,
+        adp.*
+    FROM
+        product_info pri
+      INNER JOIN model mo ON mo.model_id=pri.model_id
+      INNER JOIN stock st ON st.model_id=mo.model_id
+        left JOIN activity_reduce_product arp ON arp.produc_id=pri.product_id
+        left JOIN activity_discount_product adp ON adp.produc_id=product_id
+        ORDER BY
+      pri.create_time DESC
+      LIMIT 0,11
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--
       WARNING - @mbg.generated

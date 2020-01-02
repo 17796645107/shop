@@ -37,4 +37,15 @@ public class ProductinfoService {
         }
         return productInfos;
     }
+
+    /**
+     * 查询更多商品
+     * @return
+     */
+    public List<ProductInfo> selectProductInfoBy0Go10() {
+        List<ProductInfo> productInfoMores = productInfoMapper.selectProductInfoBy0Go10();
+        //打印
+        System.out.println(productInfoMores.size());
+        return productInfoMores;
+    }
 }
